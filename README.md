@@ -1,4 +1,4 @@
 MoreAbilityCostInfo
 ===================
 
-Simple add-on meant to show more information about spellcost at all time.
+Simple TESO add-on meant to show more informations about spellcost at all time.
