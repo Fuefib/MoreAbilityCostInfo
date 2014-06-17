@@ -1,3 +1,5 @@
+local wm = GetWindowManager() -- we want to use whatever window manager the game is
+
 local maci = {}
 
 -- Status
@@ -39,3 +41,21 @@ maci.getMagicka = function ()
 end
 
 -- GetSlotAbilityCost(index) ->      Returns: integer abilityCost, integer mechanicType 
+
+
+
+maci.createControle = function (index)
+
+  -- now a label, so we can display the information
+  -- not local, because it is declared above, so we can modify it later
+  lblCounter = wm:CreateControl("lblCounter", maci.slots[index], CT_LABEL)
+  lblCounter:SetColor(0.8, 0.8, 0.8, 1)
+  lblCounter:SetFont("ZoFontAlert")
+  lblCounter:SetScale(1)
+  lblCounter:SetWrapMode(TEX_MODE_CLAMP)
+  lblCounter:SetDrawLayer(1)
+  lblCounter:SetText("Click Counts: 0")
+  lblCounter:SetAnchor(CENTER, GuiRoot, CENTER, 0,0)
+
+  return lblCounter
+end
